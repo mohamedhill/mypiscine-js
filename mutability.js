@@ -1,3 +1,5 @@
+person.age++
+person.country = 'FR'
 const samepersone = person
 const clone1={
 
@@ -8,7 +10,3 @@ const clone2={
 
     ...person
 }
-
-
-person.age++
-
