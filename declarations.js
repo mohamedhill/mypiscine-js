@@ -21,6 +21,3 @@ let obj ={
 Object.freeze(obj)
 Object.freeze(obj.nested)
 Object.freeze(obj.nested.obj)
-obj.str = "alo"
-obj.nested.arr = "alo"
-console.log(obj,obj.nested)
