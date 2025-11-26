@@ -1,2 +1,3 @@
-  let  biggie = (Number.MAX_VALUE);
-  let smalls = (Number.MIN_VALUE)
+  let  biggie = Infinity;
+  let smalls = -Infinity
+  
