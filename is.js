@@ -1,4 +1,3 @@
-const is={}
 is.num = (arg) => typeof arg === 'number'
 is.str = (arg) => typeof arg === 'string'
 is.nan = (arg) => Number.isNaN(arg)
