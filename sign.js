@@ -6,7 +6,15 @@ return (num>0)?1:-1
 
 }
 function sameSign(num1,num2){
- return (num1 >= 0 && num2 >= 0) || (num1 <=0 && num2 <= 0)? true : false;
+if (num1 === num2){
+    return true
+}
+if (num1 <0 && num2<0){
+    return true
+}else if(num1>0 && num2>0){
+    return 
 
 }
-console.log(sameSign(0,0))
+
+return false
+}
