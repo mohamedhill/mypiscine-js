@@ -6,6 +6,7 @@ return (num>0)?1:-1
 
 }
 function sameSign(num1,num2){
- return (num1 > 0 && num2 > 0) || (num1 < 0 && num2 < 0)? true : false;
+ return (num1 >= 0 && num2 >= 0) || (num1 <=0 && num2 <= 0)? true : false;
 
 }
+console.log(sameSign(0,0))
