@@ -1,0 +1,11 @@
+function sign(num){
+    if (num === 0){
+        return 0
+    }
+return (num>0)?1:-1
+
+}
+function sameSign(num1,num2){
+ return (num1 > 0 && num2 > 0) || (num1 < 0 && num2 < 0)? true : false;
+
+}
