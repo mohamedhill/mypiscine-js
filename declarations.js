@@ -1,4 +1,4 @@
-let escapeStr = '`\/"\''
+const escapeStr = "` \\ / \" '"
 
 const arr = [4,'2']
 
