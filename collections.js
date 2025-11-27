@@ -1,15 +1,15 @@
 
 const arrToSet = (arr)=>new Set(arr)
-const setToArr = (set)=>[...set]
+const setToArr = (set)=>Array.from(set)
 const arrToStr = (arr)=>arr.join("")
 const setToStr = (set)=>arrToStr(setToArr(set))
-const strToArr = (str)=>[str.split("")]
-const strToSet = (str)=>new set(str)
+const strToArr = (str)=>str.split("")
+const strToSet = (str)=>new set(str.split(""))
 const mapToObj = (maps)=>{Object.fromEntries(maps)}
-const objToArr = (obj)=>[Object.entries(obj)]
+const objToArr = (obj)=>[Object.values(obj)]
 const objTomap = (obj)=>new Map(Object.entries(obj))
-const arrToObj = (arr)=>{Object.fromEntries(arr)}
-const strToObj = (str)=>{JSON.parse(str)}
+const arrToObj = (arr)=>Object.assign( {},arr)
+const strToObj = (str)=> Object.assign({}, str.split(""));
 
 const superTypeOf = function(item){
     if (item===null){
