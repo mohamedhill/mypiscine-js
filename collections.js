@@ -1,9 +1,9 @@
 
 const arrToSet = (arr)=>new Set(arr)
-const setToArray = (set)=>[...set]
+const setToArr = (set)=>[...set]
 const arrToStr = (arr)=>arr.join("")
-const setToStr = (set)=>arrToStr(setToArray(set))
-const strToArr = (str)=>str.split("")
+const setToStr = (set)=>arrToStr(setToArr(set))
+const strToArr = (str)=>[str.split("")]
 const strToSet = (str)=>new set(str)
 const mapToObj = (maps)=>{Object.fromEntries(maps)}
 const objToArr = (obj)=>[Object.entries(obj)]
