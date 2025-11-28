@@ -20,7 +20,7 @@ return res
 }
 function divide(a,b){
 let neg = false
-res = 0
+let res = 0
 if (b==0){
     return
 }
