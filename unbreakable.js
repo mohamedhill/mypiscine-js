@@ -1,20 +1,21 @@
 function split(str  ,spliter){
-    let res = []
-    if (spliter.length>1){
-
-        spliter = spliter.trim()
-
-    }
-    let count = 0
-for (let i = 0 ; i <str.length;i++){
-if (str[i]===spliter){
-res.push(str.slice(count,i).trim())
-count = i+1
+let res = []
+let count =0 
+if (spliter.length===0){
+    return [str]
 }
+for (let i = 0 ; i < str.length;i++){
+   if (str.slice(i,i+spliter.length)===spliter){
+    res.push(str.slice(count,i))
+    count = i +spliter.length
+    i += spliter.length-1
+   }
 }
-res.push(str.slice(count).trim())
+res.push(str.slice(count))
 return res
+
 }
+
  function join(arr,joines){
 
 let res =""
@@ -24,7 +25,7 @@ for (let i = 0 ; i<arr.length;i++){
         res+=joines
     }
 }
+
 return res
  }
 
- console.log(split('ggg - ddd - b', ' - '))
