@@ -3,11 +3,11 @@ function split(str  ,spliter){
     let count = 0
 for (let i = 0 ; i <str.length;i++){
 if (str[i]===spliter){
-res.push(str.slice(count,i))
+res.push(str.slice(count,i).trim())
 count = i+1
 }
 }
-res.push(str.slice(count))
+res.push(str.slice(count).trim())
 return res
 }
  function join(arr,joines){
@@ -22,4 +22,4 @@ for (let i = 0 ; i<arr.length;i++){
 return res
  }
 
- console.log(split('a b c', ' '))
+ console.log(split('ggg - ddd - b', '-'))
