@@ -4,7 +4,7 @@ function split(str  ,spliter){
 for (let i = 0 ; i <str.length;i++){
 if (str[i]===spliter){
 res.push(str.slice(count,i))
-count = i
+count = i+1
 }
 }
 res.push(str.slice(count))
@@ -21,3 +21,5 @@ for (let i = 0 ; i<arr.length;i++){
 }
 return res
  }
+
+ console.log(split('a b c', ' '))
