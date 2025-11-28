@@ -15,7 +15,7 @@ if (last === undefined){
   last =  arr.length
 }
 let res = []
-for (let i = 0; i<last ;i++){
+for (let i = 0; i<=last ;i++){
     if (arr[i] ===target){
         res.push(i)
 
