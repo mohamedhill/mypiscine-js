@@ -1,4 +1,4 @@
-const cutFirst = (str)=>str.slice(1)
+const cutFirst = (str)=>str.slice(2)
 const cutLast = (str)=> str.slice(0,-2)
 const cutFirstLast = (str)=> str.slice(1,-2)
 const keepFirst = (str)=> str.slice(0,2)
@@ -13,3 +13,4 @@ const keepFirstLast = function(str){
     return keepFirst(str)+keepLast(str)
 
 }
+console.log(cutFirst('abcdef'))
