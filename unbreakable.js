@@ -1,5 +1,6 @@
 function split(str  ,spliter){
     let res = []
+    spliter = spliter.trim()
     let count = 0
 for (let i = 0 ; i <str.length;i++){
 if (str[i]===spliter){
@@ -22,4 +23,4 @@ for (let i = 0 ; i<arr.length;i++){
 return res
  }
 
- console.log(split('ggg - ddd - b', '-'))
+ console.log(split('ggg - ddd - b', ' - '))
