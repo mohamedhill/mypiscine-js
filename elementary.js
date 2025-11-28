@@ -41,17 +41,24 @@ return res
 
 }
 
-function modulo(a,b){
-  q = parseInt(a / b); 
-  console.log(q)
-  p = q * b;  
-  console.log(p)
 
-  return a - p;  
+function modulo(a, b) {
+let neg = false
+if (a<0){
+neg = true
+}
+a = Math.abs(a)
+b = Math.abs(b)
+while(a>=b){
+
+a -= b
 }
 
+if (neg){
+    return -a
+}
+return a
 
-
-
+}
 
  
