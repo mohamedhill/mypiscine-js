@@ -1,81 +1,58 @@
-function round(x) {
-    let neg = x < 0
-    if (neg) x = -x
-    let res = 0
-    while (x >= 1) {
-        x -= 1;
-        res++
+function ceil(n) {
+    if (n >= 68719476735) {
+        return n
     }
-    if (x >= 0.5) res++;
-    return neg ? -res : res
+    let i = divInt(n, 1);
+    return n > 0 && n - divInt(n, 1) !== 0 ? i + 1 : i;
 }
 
-
-
-
-
-console.log(round(1.5))
-
-
-
-
-function floor(int) {
-    let neg = false;
-    if (int < 0) {
-        neg = true;
-        int = -int;
+function floor(n) {
+    if (n >= 68719476735) {
+        return n
     }
-    let intCopy = int;
-    let counter = 0;
-    while (!(intCopy < 1 && intCopy > -1)) {
-        intCopy -= 1;
-        counter++;
-    }
-    if (neg) {
-        return -counter - 1;
-    } else {
-        return counter;
-    }
+    let i = divInt(n, 1);
+    return n < 0 && n - divInt(n, 1) !== 0 ? i - 1 : i;
 }
 
-function ceil(int) {
-    if (!int) return 0;
-    let neg = false;
-    if (int < 0) {
-        neg = true;
-        int = -int;
-    }
-    let intCopy = int;
-    let counter = 0;
-    while (!(intCopy < 1 && intCopy >= 0)) {
-        intCopy -= 1;
-        counter++;
-    }
-    if (neg) {
-        return -counter;
-    } else {
-        return counter + 1;
-    }
+function trunc(n) {
+ 
+
+    let i = divInt(n, 1);
+    return i;
 }
 
-function trunc(int) {
-    let counter = 0;
-    if (int > 0xfffffffff) {
-        int -= 0xfffffffff;
-        counter += 0xfffffffff;
+function round(n) {
+    if (n >= 68719476735) {
+        return n
     }
-    let neg = false;
-    if (int < 0) {
-        neg = true;
-        int = -int;
+    let f = floor(n);
+    let c = ceil(n);
+    return (n - f < 0.5) ? f : c;
+}
+
+function divInt(a, b) {
+
+
+    let sign = 1;
+    if (a < 0) { a = -a; sign = -1; }
+
+
+    let tempB = b;
+    while (tempB <= a) {
+        tempB = tempB *10;
     }
-    let intCopy = int;
-    while (!(intCopy < 1 && intCopy > -1)) {
-        intCopy -= 1;
-        counter++;
+
+    let result = 0;
+
+    while (tempB >= b) {
+        let count = 0;
+        while (a >= tempB) {
+            a = a - tempB;
+            count = count + 1;
+        }
+        result = result * 10 + count;
+        tempB = tempB / 10; 
     }
-    if (neg) {
-        return -counter;
-    }
-    return counter;
+
+    return result * sign;
 }
