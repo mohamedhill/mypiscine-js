@@ -1,14 +1,14 @@
-function indexOf(arr,target){
-for (let i = 0 ; i< arr.length;i++){
+function indexOf(arr,target,first){
+for (let i = first ; i< arr.length;i++){
     if (arr[i] ===target){
         return i
     }
 }
 return -1
 }
-function lastIndexOf(arr,target){
+function lastIndexOf(arr,target,first){
 let res = []
-for (let i = 0 ; i< arr.length;i++){
+for (let i = first ; i< arr.length;i++){
     if (arr[i] ===target){
         res.push(i)
 
