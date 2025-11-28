@@ -29,7 +29,7 @@ neg = true
 }
 a = Math.abs(a)
 b = Math.abs(b)
-while(a>0){
+while(a>=b){
 res++
 a -= b
 }
@@ -62,3 +62,4 @@ return a
 }
 
  
+console.log(divide(34, 78))
