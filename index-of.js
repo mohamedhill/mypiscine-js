@@ -10,12 +10,12 @@ for (let i = first ; i< arr.length;i++){
 }
 return -1
 }
-function lastIndexOf(arr,target,first){
-if (first === undefined){
-  first = 0
+function lastIndexOf(arr,target,last){
+if (last === undefined){
+  last =  arr.length
 }
 let res = []
-for (let i = first ; i< arr.length;i++){
+for (let i = 0; i<last ;i++){
     if (arr[i] ===target){
         res.push(i)
 
@@ -30,3 +30,4 @@ return -1
 }
 
 const includes = (arr,target)=>indexOf(arr,target)!==-1?true:false
+
