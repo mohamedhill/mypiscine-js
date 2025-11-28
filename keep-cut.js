@@ -13,4 +13,3 @@ const keepFirstLast = function(str){
     return keepFirst(str)+keepLast(str)
 
 }
-console.log(cutFirst('abcdef'))
