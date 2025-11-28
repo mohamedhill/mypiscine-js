@@ -30,4 +30,3 @@ return -1
 }
 
 const includes = (arr,target)=>indexOf(arr,target)!==-1?true:false
-console.log(indexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2))
