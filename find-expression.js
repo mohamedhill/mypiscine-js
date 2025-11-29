@@ -1,26 +1,21 @@
-function findExpression(num){
-let qu = [[1,'1']]
-
-while (qu.length>0){
-
-    let [current, seq] = qu.shift();
-    if (current + 4=== num ){
-    return seq +' '+ add4
-}else{
-     
-qu.push([current+4,seq+' '+add4])
-
+function findExpression(num) {
+   for (let i = 0; i < 100000; i++) {
+        let cpy = 1;
+        let seq = "1";
+        let toggle = true; 
+        while (cpy <= num) {
+            if (cpy === num) {
+                return seq;
+            }
+            if (toggle) {
+                cpy += 4;
+                seq += " " + add4;
+            } else {
+                cpy *= 2;
+                seq += " " + mul2;
+            }
+            toggle = !toggle; 
+        }
+    }
+    return undefined;
 }
-if (current * 2===num){
- 
-    return seq + ' '+mul2
-}else {
-
-  qu.push([current*2,seq+' '+mul2])
-}
-
-}
-
-return undefined
-}
-
