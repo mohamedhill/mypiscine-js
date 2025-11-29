@@ -1,4 +1,4 @@
-function flat(arr,count=0){
+function flat(arr,count=1){
 let res = []
 for (let item of arr){
     if (count >0){
@@ -19,4 +19,4 @@ return res
 
 }
 
-console.log(flat([1,2,3,4,,[6],[9]],1))
+console.log(flat([1, [2]]), [1, 2])
