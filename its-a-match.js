@@ -1,5 +1,5 @@
 
-let normal = /hi/g
+let normal = /hi/
 
 let begin = /^hi/
 
