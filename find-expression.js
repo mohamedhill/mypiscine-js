@@ -1,21 +1,24 @@
 function findExpression(num) {
-   for (let i = 0; i < 100000; i++) {
-        let cpy = 1;
-        let seq = "1";
-        let toggle = true; 
-        while (cpy <= num) {
-            if (cpy === num) {
-                return seq;
-            }
-            if (toggle) {
-                cpy += 4;
-                seq += " " + add4;
-            } else {
-                cpy *= 2;
-                seq += " " + mul2;
-            }
-            toggle = !toggle; 
+    const qu = [[1, '1']];
+
+    let i = 0;
+    while (qu.length > 0) {
+        let [current, seq] = qu.shift();
+        if (current + 4 === num) {
+            return seq + ' '+add4;
         }
+        if (current + 4 < num) {
+            qu.push([current + 4, seq + ' '+add4]);
+        }
+        if (current * 2 === num) {
+            return seq + ' '+mul2;
+        }
+        if (current * 2 < num) {
+            qu.push([current * 2, seq +' '+mul2]);
+        }
+
+        i++;
     }
+
     return undefined;
 }
