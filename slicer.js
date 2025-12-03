@@ -1,5 +1,5 @@
 function slice(item ,start ,end){
-console.log('test');
+console.log('fhdjshfjsd');
 
 if (end === undefined){
     end = item.length
