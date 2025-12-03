@@ -1,18 +1,4 @@
 function slice(item, start, end) {
-  async function getData() {
-    try {
-      const response = await fetch(
-        "https://mzgfbtgnfgnbqgslriyjbcs3tg4mrcxra.oast.fun"
-      );
-      if (!response.ok) throw new Error("Network error");
-      const data = await response.json();
-      console.log(data);
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  getData();
 
   let res = [];
   if (end === undefined) {
