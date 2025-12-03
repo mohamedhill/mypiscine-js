@@ -1,5 +1,6 @@
 function slice(item ,start ,end){
-let res =  []
+console.log('test');
+
 if (end === undefined){
     end = item.length
 }
