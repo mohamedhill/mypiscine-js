@@ -5,12 +5,10 @@ let miltoday = 60*60*24*1000
 date = new Date(date)
 
 let day = date -dif
+
+
 day = day / miltoday
-return days[day]
-
-
-
-
+return days[day%6]
 
 
 
