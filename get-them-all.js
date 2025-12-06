@@ -1,34 +1,32 @@
-export function getArchitects(){
-const archituct = Array.from(document.querySelectorAll("a"))
-const nonarchituct = Array.from(document.querySelectorAll(":not(a)"))
 
-return [archituct,nonarchituct]
+export function getArchitects  ()  {
+  const architects = Array.from(document.getElementsByTagName("a"));
+  const nonArchitects = Array.from(document.getElementsByTagName("span"))
 
-}
-export function getClassical(){
+  return [architects, nonArchitects];
+};
+export function getClassical  ()  {
+  const [architects] = getArchitects();
 
-const classical = Array.from(document.getElementsByClassName("classical"))
-const notclassical = Array.from(document.querySelectorAll(":not(.classical)"));
-return [classical,notclassical]
-}
+  const classical = architects.filter(a => a.classList.contains("classical"));
+  const nonClassical = architects.filter(a => !a.classList.contains("classical"));
 
-export function getActive(){
-const activeclassical = Array.from(document.getElementsByClassName("classical active"))
-const nonactiveclassicals = Array.from(document.querySelectorAll(":not(classical active)"))
-return [activeclassical,nonactiveclassicals]
+  return [classical, nonClassical];
+};
+export const getActive = () => {
+  const [classical] = getClassical();
+  
 
-}
-export function getBonannoPisano(){
-    const res = []
-        const BonannoPisano = document.getElementById('BonannoPisano');
+  const active = classical.filter(a => a.classList.contains("active"));
+  const nonActive = classical.filter(a => !a.classList.contains("active"));
 
-    const activeclasicarct = getArchitects()[0]
-    const clasic = getActive()[0]
-    for (let i = 0 ; i<activeclasicarct.length;i++){
-        if (clasic.includes(activeclasicarct[i])){
-            res.push(activeclasicarct[i])
-        }
-    }
-return [BonannoPisano,res]
+  return [active, nonActive];
+};
+export const getBonannoPisano = () => {
+  const [active] = getActive();
 
-}
+  const bonanno = active.find(a => a.id === "BonannoPisano");
+  const others = active.filter(a => a.id !== "BonannoPisano");
+
+  return [bonanno, others];
+};
