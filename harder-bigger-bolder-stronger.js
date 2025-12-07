@@ -13,9 +13,9 @@ export function generateLetters() {
     div.style.fontWeight = fontweight;
     document.body.appendChild(div);
     fontsize++;
-    if (i === 40) {
+    if (i === 39) {
       fontweight = 400;
-    } else if (i === 80) {
+    } else if (i === 79) {
       fontweight = 600;
     }
   }
