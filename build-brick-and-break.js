@@ -16,13 +16,15 @@ export function build(n) {
     count++;
   }, 100);
 }
-
 export function repair(...ids) {
-  for (let i = 0; i < ids.length; i++) {
-    const element = document.getElementById(ids[i]);
+  for (const id of ids) {
+    const element = document.getElementById(id);
+    if (!element) continue;
 
     if (element.hasAttribute("data-foundation")) {
       element.dataset.repaired = "in progress";
+    } else {
+      element.dataset.repaired = true;
     }
   }
 }
