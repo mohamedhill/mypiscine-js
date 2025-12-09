@@ -1,10 +1,7 @@
-function invert(obj){
-let res = {}
-for (let t in obj){
-res[obj[t]]=t
+function invert(obj) {
+    let res = {};
+    Object.keys(obj).forEach(key => {
+        res[obj[key]] = key;
+    });
+    return res;
 }
-
-return res
-
-}
-
