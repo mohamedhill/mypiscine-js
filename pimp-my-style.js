@@ -1,4 +1,4 @@
-import { styles } from './pimp-my-style.data.js'
+/* import { styles } from './pimp-my-style.data.js'
 
 let index = 0
 let reverse = false
@@ -27,3 +27,12 @@ export function pimp() {
     }
   }
 }
+ */
+
+let test =  {brand: 'ford', motor: 'v8', year: 2000, fast: true, eco: true }
+let tl = {}
+for (let t in test){
+ tl[test[t]]=t
+  
+}
+console.log(tl);
