@@ -1,5 +1,5 @@
 function pick(obj,inc){
-let res = []
+let res = {}
 let keys = Object.keys(obj)
 if (typeof inc === 'string'){
     keys.forEach((key)=>{
@@ -18,3 +18,5 @@ if (typeof inc === 'string'){
 return res
 }
 
+
+  
