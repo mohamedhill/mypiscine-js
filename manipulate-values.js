@@ -17,10 +17,12 @@ for (let t in obj){
 return res
 }
 
-function reduceValues(obj,callback){
-    let acc = 0
+function reduceValues(obj,callback,acc=0){
+   
     for (let t in obj){
         acc = callback(acc,obj[t])
     }
 return acc
 }
+
+
