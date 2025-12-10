@@ -17,14 +17,30 @@ function mapKeys(obj, callback) {
   return res;
 }
 
-function reduceKeys(obj, callback,acc=Object.keys(obj)[0]) {
-  let index = 0
-  for (let t in obj) {
-    if (index===0)continue
-    acc = callback(acc, t);
-  }
-  return acc;
+function reduceKeys(obj, func, acc) {
+    let keys = Object.keys(obj)
+    let startIndex = 0
+    if (acc === undefined && keys.length > 0) {
+        acc = keys[0]
+        startIndex = 1
+    }
+    for (let i = startIndex; i < keys.length; i++) {
+        acc = func(acc, keys[i])
+    }
+    return acc
 }
 
 
 
+let cart= {
+    vinegar: 80,
+    sugar: 100,
+    oil: 50,
+    onion: 200,
+    garlic: 22,
+    paprika: 4,
+  }
+  
+  console.log(reduceKeys(cart, (acc, cr) => acc.concat(", ", cr)));
+  
+  //'vinegar, sugar, oil, onion, garlic, paprika',
