@@ -18,5 +18,15 @@ function timeout(delay = 0, callback = async () => {}) {
         const timeout = new Promise((resolve) =>
             setTimeout(resolve, delay, Error('timeout'))
         );
-    }
+        const functionCall = new Promise((resolve) =>
+            resolve(callback(...args))
+        );
+        const res = await Promise.race([timeout, functionCall]).then(
+            (res) => res
+        );
+        if (res instanceof Error) {
+            throw res;
+        }
+        return res;
+    };
 }
