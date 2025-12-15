@@ -2,7 +2,7 @@ async function getJSON(path, params = {}) {
   let url =path
   let searchParams =new URLSearchParams(params).toString()
   if (searchParams) {
-    url += ?${searchParams}
+    url += `?${searchParams}`
   }
   let response = await fetch(url)
   if (!response.ok) {
@@ -13,3 +13,4 @@ async function getJSON(path, params = {}) {
     throw new Error(json.error)
   }
   return json.data
+}
