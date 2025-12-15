@@ -13,3 +13,10 @@ function retry(count = 3, callback = async () => {}) {
     };
 }
 
+function timeout(delay = 0, callback = async () => {}) {
+    return async function (...args) {
+        const timeout = new Promise((resolve) =>
+            setTimeout(resolve, delay, Error('timeout'))
+        );
+    }
+}
